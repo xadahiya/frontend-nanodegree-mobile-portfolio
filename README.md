@@ -103,13 +103,15 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
   ```
   * Fixed FSL in UpdatePositions()
   * Reduced Number of `.mover` pizzas
-    ```
+   
+   ```
       var percent_height = parseFloat((window.outerHeight/screen.height)*100);
       var rows = parseInt(percent_height/33) +1 ;
 
       var num_pizzas = rows * cols;
     ```
   * pizzasDiv declared outside for loop
+    
     ```
       var pizzasDiv = document.getElementById("randomPizzas");
       for (var i = 2; i < 100; i++) {
