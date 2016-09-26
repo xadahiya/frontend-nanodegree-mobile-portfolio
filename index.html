@@ -6,8 +6,7 @@
     <meta name="description" content=" FILL ME IN ">
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
-
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
+<!-- Using inline css to reduce number of requests to the server -->
    <style>
       html {
         font-size: 100%;
@@ -61,6 +60,7 @@
 
     </style>
 
+<!-- print media query for print.css -->
     <link href="css/print.css" rel="stylesheet" media="print">
   </head>
 
@@ -117,7 +117,7 @@
     
     <script src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
-
+    <!-- A simple alternative to load webfonts more efficiently -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
     <script>
       WebFont.load({

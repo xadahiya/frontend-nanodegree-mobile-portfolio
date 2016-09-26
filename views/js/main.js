@@ -421,7 +421,7 @@ var resizePizzas = function(size) {
 
   changeSliderLabel(size);
 
-   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+//A simple hack to improve fps and stop forced synchronous layout 
   function changePizzaSizes(size) {
 
     // Changes the slider value to a percent width
@@ -439,11 +439,12 @@ var resizePizzas = function(size) {
           console.log("bug in sizeSwitcher");
       }
 
-
-  // Iterates through pizza elements on the page and changes their widths
+// Gets all pizza nodes from the dom tree
   var pizzas = document.querySelectorAll(".randomPizzaContainer");
 
+  // Iterates through pizza elements on the page and changes their widths
     for (var i = 0; i < pizzas.length; i++) {
+      //set each pizza width equal to pizza width
       pizzas[i].style.width = pizza_width + "%";
     }
   }
