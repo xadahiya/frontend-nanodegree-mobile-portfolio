@@ -53,3 +53,53 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+### Changes Made in Index.html
+* Moved all js files to bottom of the page to avoid rendering blockage by js
+* Used Webfont.js to load online google fonts
+  ```
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+      <script>
+        WebFont.load({
+        google: {
+        families: ['Open Sans:400,700',]
+          }
+        });
+      </script>
+  ```
+* Optimized images
+* Added media query to print.css
+
+### Changes made to `views/js/main.js`
+*  Optimized changePizzaSizes() to improve performance
+  ```
+    //A simple hack to improve fps and stop forced synchronous layout 
+  function changePizzaSizes(size) {
+
+    // Changes the slider value to a percent width
+      switch(size) {
+        case "1":
+          pizza_width = 25;
+          break;
+        case "2":
+          pizza_width = 33.33;
+          break;
+        case "3":
+          pizza_width = 50;
+          break;
+        default:
+          console.log("bug in sizeSwitcher");
+      }
+
+    // Gets all pizza nodes from the dom tree
+    var pizzas = document.querySelectorAll(".randomPizzaContainer");
+
+    // Iterates through pizza elements on the page and changes their widths
+    for (var i = 0; i < pizzas.length; i++) {
+      //set each pizza width equal to pizza width
+      pizzas[i].style.width = pizza_width + "%";
+      }
+    }
+  ```
+  * Fixed FSL in UpdatePositions()
+
